@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_192955) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_08_192511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,15 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_192955) do
     t.index ["user_id"], name: "index_homeworks_on_user_id"
   end
 
-  create_table "user_homeworks", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "homework_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["homework_id"], name: "index_user_homeworks_on_homework_id"
-    t.index ["user_id"], name: "index_user_homeworks_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "user_name"
     t.string "email"
@@ -52,6 +43,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_192955) do
   end
 
   add_foreign_key "homeworks", "users"
-  add_foreign_key "user_homeworks", "homeworks"
-  add_foreign_key "user_homeworks", "users"
 end
