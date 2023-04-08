@@ -49,10 +49,12 @@ group :development, :test do
   gem "launchy"
   gem "shoulda-matchers"
   # gem "unsplash"
+  gem 'webmock'
 end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem "rubocop-rails", require: false
 end
 
