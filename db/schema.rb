@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_192511) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "homeworks", force: :cascade do |t|
+  create_table "pages", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "language"
     t.string "theme_image"
@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_192511) do
     t.string "sent10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_homeworks_on_user_id"
+    t.index ["user_id"], name: "index_pages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +42,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_192511) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "homeworks", "users"
+  add_foreign_key "pages", "users"
 end

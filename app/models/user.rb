@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :homeworks
+  has_many :pages
 
   validates :user_name, uniqueness: true, presence: true
   validates :email, uniqueness: true, presence: true

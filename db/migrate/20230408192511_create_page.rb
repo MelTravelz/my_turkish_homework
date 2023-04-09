@@ -1,6 +1,6 @@
-class CreateHomework < ActiveRecord::Migration[7.0]
+class CreatePage < ActiveRecord::Migration[7.0]
   def change
-    create_table :homeworks do |t|
+    create_table :pages do |t|
       t.references :user, null: false, foreign_key: true
       t.string :language
       t.string :theme_image

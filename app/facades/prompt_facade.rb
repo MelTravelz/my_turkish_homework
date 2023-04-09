@@ -8,7 +8,13 @@ class PromptFacade
   end
 
   def get_random_photo_and_word
-    image_details = unsplash_service.fetch_api
-    OpenStruct.new(image: image_details.first[:urls])
+    info_hash = {
+      image_details: unsplash_service.fetch_api
+      # word_details: turkishAPI_service.fetch_api
+    }
+    # image_details = unsplash_service.fetch_api
+    # word_details = turkishAPI_service.fetch_api
+
+    Prompt.new(info_hash)
   end
 end
